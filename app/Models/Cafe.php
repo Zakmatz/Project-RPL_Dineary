@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Cafe extends Model
 {
     protected $fillable = [
-        'name', 'address', 'description', 
-        'phone', 'open_hours', 'price_range', 'photo'
-    ];
+    'name',
+    'address',
+    'description',
+    'deskripsi_singkat',
+    'phone',
+    'sosmed',
+    'open_hours',
+    'price_range',
+    'photo',
+   ];
 
     public function categories() {
         return $this->belongsToMany(Category::class, 'cafe_categories');

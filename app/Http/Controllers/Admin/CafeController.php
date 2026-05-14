@@ -40,13 +40,15 @@ class CafeController extends Controller
         }
 
         $cafe = Cafe::create([
-            'name'        => $request->name,
-            'address'     => $request->address,
-            'description' => $request->description,
-            'phone'       => $request->phone,
-            'open_hours'  => $request->open_hours,
-            'price_range' => $request->price_range,
-            'photo'       => $photoPath,
+            'name'              => $request->name,
+            'address'           => $request->address,
+            'description'       => $request->description,
+            'deskripsi_singkat' => $request->deskripsi_singkat,
+            'phone'             => $request->phone,
+            'sosmed'            => $request->sosmed,
+            'open_hours'        => $request->open_hours,
+            'price_range'       => $request->price_range,
+            'photo'             => $photoPath,
         ]);
 
         if ($request->categories) {
@@ -83,13 +85,15 @@ class CafeController extends Controller
         }
 
         $cafe->update([
-            'name'        => $request->name,
-            'address'     => $request->address,
-            'description' => $request->description,
-            'phone'       => $request->phone,
-            'open_hours'  => $request->open_hours,
-            'price_range' => $request->price_range,
-            'photo'       => $cafe->photo,
+            'name'              => $request->name,
+            'address'           => $request->address,
+            'description'       => $request->description,
+            'deskripsi_singkat' => $request->deskripsi_singkat,
+            'phone'             => $request->phone,
+            'sosmed'            => $request->sosmed,
+            'open_hours'        => $request->open_hours,
+            'price_range'       => $request->price_range,
+            'photo'             => $cafe->photo,
         ]);
 
         $cafe->categories()->sync($request->categories ?? []);

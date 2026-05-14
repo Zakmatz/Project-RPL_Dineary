@@ -1,3 +1,41 @@
+/* resources/css/app.css */
+
+/* 1. Font UT Bagh untuk Judul Besar */
+@font-face {
+    font-family: 'UT Bagh';
+    src: url('/fonts/UT Bagh Display Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Font Stack Sans Headline untuk Teks Biasa & Tombol */
+@font-face {
+    font-family: 'Stack Sans';
+    src: url('/fonts/StackSansHeadline-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animasi Timbul yang Lebih Elegan & Halus */
+.hover-pop {
+    transition: all 0.3s ease-out;
+    /* Dibuat lebih natural pergerakannya */
+    cursor: pointer;
+}
+
+.hover-pop:hover {
+    /* scale diturunkan dari 1.15 jadi 1.03 (cuma membesar 3%) */
+    /* translateY diturunkan dari -10px jadi -4px (cuma naik dikit) */
+    transform: scale(1.03) translateY(-4px);
+
+    /* Bayangannya juga dibuat lebih tipis biar nggak terlalu gelap */
+    filter: drop-shadow(0 10px 15px rgba(139, 59, 8, 0.15));
+    z-index: 50;
+    position: relative;
+}

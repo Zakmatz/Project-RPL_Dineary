@@ -1,52 +1,92 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="id">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Dineary</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body class="relative w-full h-screen overflow-hidden bg-[#FDF5E6]">
+
+    <!-- DEKORASI GAMBAR ROTI -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/Biskuit.png') }}" class="absolute -top-10 -left-16 w-[350px] rotate-[15deg] opacity-95 drop-shadow-2xl" alt="Pretzel">
+        <img src="{{ asset('images/Croissant.png') }}" class="absolute -top-16 left-[25%] w-[400px] -rotate-12 opacity-95 drop-shadow-2xl" alt="Croissant">
+        <img src="{{ asset('images/Biskuit.png') }}" class="absolute -top-10 -right-16 w-[350px] rotate-45 opacity-90 drop-shadow-2xl" alt="Pretzel">
+        <img src="{{ asset('images/Sourdough.png') }}" class="absolute top-[40%] left-[8%] w-[380px] -translate-y-1/2 opacity-95 drop-shadow-2xl" alt="Sourdough">
+        <img src="{{ asset('images/Biskuit.png') }}" class="absolute -bottom-20 left-[35%] w-[320px] -rotate-[20deg] opacity-90 drop-shadow-2xl" alt="Pretzel">
+        <img src="{{ asset('images/Croissant.png') }}" class="absolute -bottom-10 -right-10 w-[450px] rotate-12 opacity-80 drop-shadow-2xl" alt="Roti">
+    </div>
+
+    <!-- GRADASI COKELAT MUDA DARI BAWAH (z-10) -->
+    <div class="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-[#E8A55B] via-[#E8A55B]/40 to-transparent z-10 pointer-events-none opacity-80"></div>
+
+    <!-- TOMBOL BACK (z-50) -->
+    <a href="{{ url('/') }}" class="absolute top-10 left-10 w-[60px] h-[60px] bg-[#8B3B08] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform z-50 cursor-pointer">
+        <svg class="w-8 h-8 -ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </a>
+
+    <!-- LOGO DINEARY (z-50) -->
+    <div class="absolute bottom-10 left-10 z-50">
+        <img src="{{ asset('images/dineary logo (1).png') }}" alt="Dineary Logo" class="w-[280px] drop-shadow-lg">
+    </div>
+
+    <!-- KOTAK FORM GLASSMORPHISM (Mengambang di Kanan) -->
+    <div class="absolute right-[5%] lg:right-[8%] top-1/2 -translate-y-1/2 w-full max-w-[600px] z-40">
+        <div class="w-full bg-[#FDF4E3]/50 backdrop-blur-md border-[1.5px] border-white/60 rounded-[45px] px-14 py-12 shadow-[0_15px_40px_rgba(139,59,8,0.15)]">
+
+            <div class="w-full flex flex-col items-center">
+                <!-- Judul -->
+                <h2 class="font-bagh font-black text-[60px] text-[#5A5D46] mb-10 drop-shadow-sm tracking-wide">Sign Up</h2>
+
+                <!-- Form -->
+                <form method="POST" action="{{ route('register') }}" class="w-full flex flex-col gap-4">
+                    @csrf
+
+                    <!-- Grid First Name & Last Name -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-stack text-[#713B17] font-semibold text-[14px] ml-2">First Name</label>
+                            <input type="text" name="first_name" class="w-full bg-white/90 h-[54px] rounded-[18px] px-5 text-[#713B17] font-stack font-semibold outline-none border border-transparent focus:border-white focus:ring-4 focus:ring-white/50 shadow-inner transition-all" required autofocus>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-stack text-[#713B17] font-semibold text-[14px] ml-2">Last Name</label>
+                            <input type="text" name="last_name" class="w-full bg-white/90 h-[54px] rounded-[18px] px-5 text-[#713B17] font-stack font-semibold outline-none border border-transparent focus:border-white focus:ring-4 focus:ring-white/50 shadow-inner transition-all" required>
+                        </div>
+                    </div>
+
+                    <!-- Input Email -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="font-stack text-[#713B17] font-semibold text-[14px] ml-2">Email</label>
+                        <input type="email" name="email" class="w-full bg-white/90 h-[54px] rounded-[18px] px-5 text-[#713B17] font-stack font-semibold outline-none border border-transparent focus:border-white focus:ring-4 focus:ring-white/50 shadow-inner transition-all" required>
+                    </div>
+
+                    <!-- Input Username -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="font-stack text-[#713B17] font-semibold text-[14px] ml-2">Username</label>
+                        <input type="text" name="username" class="w-full bg-white/90 h-[54px] rounded-[18px] px-5 text-[#713B17] font-stack font-semibold outline-none border border-transparent focus:border-white focus:ring-4 focus:ring-white/50 shadow-inner transition-all" required>
+                    </div>
+
+                    <!-- Input Password -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="font-stack text-[#713B17] font-semibold text-[14px] ml-2">Password</label>
+                        <input type="password" name="password" class="w-full bg-white/90 h-[54px] rounded-[18px] px-5 text-[#713B17] font-stack font-semibold outline-none border border-transparent focus:border-white focus:ring-4 focus:ring-white/50 shadow-inner transition-all" required>
+                    </div>
+
+                    <!-- Tombol Sign Up -->
+                    <button type="submit" class="w-full bg-[#5A5D46] hover:bg-[#4A4D3A] text-white font-stack font-bold text-[18px] h-[60px] rounded-full mt-4 shadow-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                        Sign Up
+                    </button>
+
+                </form>
+            </div>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+</body>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>

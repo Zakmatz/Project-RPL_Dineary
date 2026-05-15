@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Login Admin</h1>
+
     @if(session('error'))
         <p style="color:red">{{ session('error') }}</p>
     @endif
@@ -22,5 +23,7 @@
         </div>
         <button type="submit">Login</button>
     </form>
+
+    <a href="{{ route('login') }}">Login sebagai User</a>
 </body>
 </html>

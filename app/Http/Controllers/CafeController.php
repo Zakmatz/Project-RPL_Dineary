@@ -25,7 +25,7 @@ class CafeController extends Controller
             });
         }
 
-        $cafes = $query->get();
+        $cafes = $query->paginate(9);
         $categories = Category::all();
 
         return view('cafes.index', compact('cafes', 'categories'));

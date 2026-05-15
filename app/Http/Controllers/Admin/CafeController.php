@@ -11,8 +11,7 @@ class CafeController extends Controller
 {
     public function index()
     {
-        $cafes = Cafe::with('categories')->get();
-        return view('admin.cafes.index', compact('cafes'));
+        return redirect()->route('admin.dashboard');
     }
 
     public function create()
@@ -24,15 +23,17 @@ class CafeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'address'     => 'required|string',
-            'description' => 'nullable|string',
-            'phone'       => 'nullable|string|max:20',
-            'open_hours'  => 'nullable|string|max:100',
-            'price_range' => 'nullable|string|max:100',
-            'photo'       => 'nullable|image|max:2048',
-            'categories'  => 'nullable|array',
-        ]);
+        'name'              => 'required|string|max:255',
+        'address'           => 'required|string',
+        'description'       => 'nullable|string',
+        'deskripsi_singkat' => 'nullable|string|max:255',
+        'phone'             => 'nullable|string|max:20',
+        'sosmed'            => 'nullable|string|max:100',
+        'open_hours'        => 'nullable|string|max:100',
+        'price_range'       => 'nullable|string|max:100',
+        'photo'             => 'nullable|image|max:2048',
+        'categories'        => 'nullable|array',
+    ]);
 
         $photoPath = null;
         if ($request->hasFile('photo')) {
@@ -55,7 +56,7 @@ class CafeController extends Controller
             $cafe->categories()->attach($request->categories);
         }
 
-        return redirect()->route('admin.cafes.index')->with('success', 'Cafe berhasil ditambahkan!');
+        return redirect()->route('admin.dashboard')->with('success', 'Cafe berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -70,14 +71,16 @@ class CafeController extends Controller
         $cafe = Cafe::findOrFail($id);
 
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'address'     => 'required|string',
-            'description' => 'nullable|string',
-            'phone'       => 'nullable|string|max:20',
-            'open_hours'  => 'nullable|string|max:100',
-            'price_range' => 'nullable|string|max:100',
-            'photo'       => 'nullable|image|max:2048',
-            'categories'  => 'nullable|array',
+            'name'              => 'required|string|max:255',
+            'address'           => 'required|string',
+            'description'       => 'nullable|string',
+            'deskripsi_singkat' => 'nullable|string|max:255',
+            'phone'             => 'nullable|string|max:20',
+            'sosmed'            => 'nullable|string|max:100',
+            'open_hours'        => 'nullable|string|max:100',
+            'price_range'       => 'nullable|string|max:100',
+            'photo'             => 'nullable|image|max:2048',
+            'categories'        => 'nullable|array',
         ]);
 
         if ($request->hasFile('photo')) {
@@ -98,13 +101,13 @@ class CafeController extends Controller
 
         $cafe->categories()->sync($request->categories ?? []);
 
-        return redirect()->route('admin.cafes.index')->with('success', 'Cafe berhasil diupdate!');
+        return redirect()->route('admin.dashboard')->with('success', 'Cafe berhasil diupdate!');
     }
 
     public function destroy($id)
     {
         $cafe = Cafe::findOrFail($id);
         $cafe->delete();
-        return redirect()->route('admin.cafes.index')->with('success', 'Cafe berhasil dihapus!');
+        return redirect()->route('admin.dashboard')->with('success', 'Cafe berhasil dihapus!');
     }
 }

@@ -46,6 +46,8 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        $request->session()->put('role', 'user');
+
         return redirect(route('home', absolute: false));
     }
 }

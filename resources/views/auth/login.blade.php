@@ -42,6 +42,8 @@
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
+            {{-- Link ke halaman login admin --}}
+
         </div>
     </form>
 </x-guest-layout>

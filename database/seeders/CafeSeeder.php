@@ -20,6 +20,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'instagram.com/nyctophilycoffee',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCKCNWlmm7IpTJZDHtIdhs2eSLhsFRXPqmyQw1SH1MtBNg5ckyqn6QPj4P7eBS9TSdb3Cjp41DDNTWxaufJLXNSlgr4s1txy_2nerCLZVx_5da_OuyzZQ3eahtjLXjb88bw2BOJg=w426-h240-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Kedai kopi cozy dengan suasana tenang, cocok untuk kerja remote dan belajar di area Tembalang.',
             ],
             [
                 'name'       => 'Mitsu Cafe',
@@ -30,6 +31,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAENHkSHQMyBoWK-qhdS-805cB_JgxLovMqTMAhPD-y0uJ0crs4vVpPW3o7mxZclSPpzc9J3AH2V-1rHojT9QK6b-msxkaZ1Es2jrjc9FYyd1jZ5WmNmRKwqTND36KBBZLz4VIQ=w408-h544-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Cafe minimalis dengan harga terjangkau, tempat favorit mahasiswa untuk nongkrong dan mengerjakan tugas.',
             ],
             [
                 'name'       => 'Lingkar Coffee & Idea',
@@ -40,6 +42,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/lingkarcoffee',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKqnSBe-msKo7njHvv30lG4KdPvkpTSTbDWVumqOIZGkyvZG70gwtXKk5prLZNNczAqdRlStgG0Se84XiN06pRSvrXpmglqc479Jw5r51iZlAwmy7KTlIzmeZkhdmDTweUvIAj=w408-h612-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Coffee shop kreatif dengan konsep industrial, sering jadi tempat diskusi dan brainstorming.',
             ],
             [
                 'name'       => 'Kopi Nako',
@@ -50,6 +53,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '@kopinako.semarang',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPnUaWsL1ou1LEobMbz43Gdn_XBItPl-872pp7IQ2zne5h8ums-FhAy7itblhtQKCKQIF-2W5r3aEbtVdillb6Bba9SVLBeumnrdNAaw9ucVF0_TfUJ0brqsCDR-jamGl6wHJ3l6vS50In=w408-h306-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Cafe populer dengan menu kopi nusantara dan suasana hangat untuk nongkrong bersama teman.',
             ],
             [
                 'name'       => 'Anantari Coffee',
@@ -60,6 +64,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '@anantari.smg',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGipbSGSr1PWlBqs16cL9YxY_4qwNlT1PLv8jtXq9rFnBiM1V9oS1inp0G-hxajzahVW0VVTmD8O6kaWjQ8M5KzLd-GDg9wMSAzZi3A7cV1HaYBpinHkZrn8QLkd1_oiYzfhGHyfxSXUL2J=w408-h544-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Cafe premium dengan interior elegan dan sajian kopi spesialti pilihan dari berbagai daerah.',
             ],
             [
                 'name'       => 'Peacock Coffie',
@@ -70,6 +75,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFK9vN5x5APuE-AuSzg3baD7o3yJZULcaGnhGuL3hNNkHOJws8aC0BcuLLGAC9NJwi_zd0n6z5WVKpdi1Ow455tR7QbZ7KacDJsSRh1kC89UZvqahdyH0pmePYLLSCuWwqgPaTBETziIca5=w408-h544-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Cafe buka 24 jam dengan view kota Semarang, ideal untuk begadang kerja atau ngopi malam.',
             ],
             [
                 'name'       => 'Kopi Tembalang',
@@ -80,6 +86,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '@kopitembalang',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfjrTE8oaZpkt2BH77p2t2SsgyX8VIuL0XloFs39f5AayDgRc6mCSoqhN-AiIstt56NmKdQsP2zQAtkokooLw5N4RtCFRlLBmhnTUhJRTzDDNI_BvVlytBQaSS9udT0EwxzEU4LA=w408-h509-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Kedai kopi sederhana dengan harga mahasiswa dan suasana santai khas Tembalang.',
             ],
             [
                 'name'       => 'Bloomery Patisserie',
@@ -90,6 +97,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/bloomerypatisserie',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEpKgIK7Av6g-xmyTdv06sZ0eaNYKb0QZ_UJfwnavHKZnY_CmIeoraPNe9f8FDAZXk_sxwlZ0NWtp0OFHU4LX3xnAFrMvN2MHopWXWroXthu-WLtT_uDQigtZZzNVjdfJA9lDpQOTm-Joo=w408-h544-k-no',
                 'category'   => 'Cafe Kue',
+                'deskripsi_singkat' => 'Patisserie premium dengan aneka pastry dan kue artisan, cocok untuk pecinta dessert.',
             ],
             [
                 'name'       => 'hèr',
@@ -100,6 +108,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/her.tdm',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2oveniiRXoOKnsHcCnlYhkjLNu-fzJ0FWWTKTxVZz9u1BrOeCG4wPVW2tO1LnJB-HbDDU0YjaSS6MKBOkhGV3AY_KyBGP46UZttk2ScBRhIZIfbjh8UN6RI5p3ahN3rsQ6wR1qGhb3lKi=w426-h240-k-no',
                 'category'   => 'Cafe Kue',
+                'deskripsi_singkat' => 'Cafe aesthetic dengan konsep cozy dan pilihan kue homemade yang menggugah selera.',
             ],
             [
                 'name'       => 'Semasa Kopi',
@@ -110,6 +119,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '@semasa.kopi',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFUgRvqlYyb3Ow03jkriapthdtg9Ec0C4wbAT6EmxGkvfPxNWhoM_Y2nEhAydYoRKxm7eEdRfT9VqzOvCJnGkoDKYFYLdzXVIPbFLmgQgXHFy2X53PyHkcyQGM4hSCqe0TrnsuD=w426-h240-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Tempat ngopi murah meriah dengan WiFi kencang, favorit mahasiswa untuk kerja dan belajar.',
             ],
             [
                 'name'       => 'Ejaan Koffie',
@@ -120,6 +130,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => '@ejaankoffie',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGeeepBjziQX7__-FajI-mRxEOB0aPAF49tYHp-LTypZLgxtu86P57v7pSJvoxqi-pQOMpGpZNzlFzOjKJTagGoF77nmdEynrMhF82RNScLpPAQ0Oejoa3AGZGpTFwRZ6h9fQhBxg=w408-h306-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Coffee shop 24 jam dengan konsep literasi, nyaman untuk bekerja kapan saja.',
             ],
             [
                 'name'       => 'La Saveur Bakeshop',
@@ -130,6 +141,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/lasaveur.id',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEl0svSyGjhc2_1Avpe4SL5l-WKtQW2NbQPVl2q1J3W1rsiDqHdYyKryvvLn554YowSKpKnU1chLrUvU-d8LMF9ImA9e7TA8eA9FiPFFGqMyFqZH3jJSPLs4hgKfz6FW__JI5PNsnsDES0=w408-h612-k-no',
                 'category'   => 'Cafe Kue',
+                'deskripsi_singkat' => 'Bakeshop elegan dengan roti dan pastry ala Prancis, sempurna untuk menemani kopi sore.',
             ],
             [
                 'name'       => 'Kedai Kue Mommy',
@@ -140,6 +152,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/kedaikue.mommy',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEquWIrvO-_eIN4GrY7epF9xiDAv-dF5stjS18XRGOlCgvQXdxG4l_wrP2MB1BuxOx7ToaQHy2Rhx2q8z_qddZiKnMw57Ya7fVlDMfJZFKWkZVT_-m8JoCfMIcfh0t5Dhmfo6izxaFzRToL=w408-h306-k-no',
                 'category'   => 'Cafe Kue',
+                'deskripsi_singkat' => 'Kedai kue rumahan dengan harga terjangkau dan cita rasa homemade yang bikin nagih.',
             ],
             [
                 'name'       => 'The Ambaru Coffee',
@@ -150,6 +163,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/theambarucoffee',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoi9HYWcQrIDGHkazDf_J1601tBS9Ey6Rod4atnBKexD7-BXcZqKxWNV879Dhy9z3K4Wosd-vXxNOklzG7SQ4CoXFwREwZD0EhoB93nxCJsDjC9Dff72pTEoIKIE9dmzx_Vcnhq-sE2Ldh=w408-h306-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Cafe luas dengan area outdoor dan live music, tempat seru untuk hangout malam.',
             ],
             [
                 'name'       => 'Kopi Kemenangan',
@@ -160,6 +174,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'kopikemenangan.id',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwVAe-G-rviJoU1Q2U5sbh4GCeSGYF1Ufb-U9HkP_psUeeiSq0EAaGaAeWHo186RMOMiexrFmXoQikT4g_woVrFpmiD-MxG-4mKI_ikTjLALfH3gv95S8ApqOJVCzvdwMSjzupl6qQbusl=w408-h725-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Kedai kopi murah dengan WiFi stabil dan colokan listrik melimpah, pas untuk WFC.',
             ],
             [
                 'name'       => 'Anak Panah Kopi DipoHub',
@@ -170,6 +185,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/dipohub.undip',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHw2h_cBKzTVRGNcHjgAC0V-wej3RGNZqrLHW_Y85bcBH9czna7xZqtGzOL1ATQikGVXd9NuMfObDd2-7V_k6zgTghHM8fIUgvsuQIHYRcQVXZnbtkoOcoXR7rLdomWjIlHJoes=w408-h544-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Hub kreatif di area kampus UNDIP dengan kopi berkualitas dan ruang komunal.',
             ],
             [
                 'name'       => 'Matera',
@@ -180,6 +196,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/materacoffee',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9nj4-OGWPdKxqmQW_HmO2gUKZrW0y9LDQzf0ixRKFdO3IgLCxumhTZBddz0FrzffOXR3YJAW8vcUm1VDO8lsLDYwK8kAicLlKLx2vk03Aqv7eSukdb6LLZO7iHFuSQ2EmXkiT=w426-h240-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Cafe modern dengan desain kontemporer dan WiFi cepat, cocok untuk pekerja remote.',
             ],
             [
                 'name'       => 'Palette Coffee',
@@ -190,6 +207,7 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/palettespace__',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAG_F2ZktXQ4Vk9QBCHy-ZE9RhRSEwbIOD_lPlM84rDYgFePRhzYNEvLyW0LZTVcfQFA1pBbXMaGpve3l6w8YTTKpleE4k9AA1MxP7a41QA0mH930ry4WRiMztaNWIJ0LybxOjpk=w408-h306-k-no',
                 'category'   => 'Cafe WFC',
+                'deskripsi_singkat' => 'Coffee space artistik buka hingga dini hari, pilihan tepat untuk lembur sambil ngopi.',
             ],
             [
                 'name'       => 'Darabiru',
@@ -200,19 +218,21 @@ class CafeSeeder extends Seeder
                 'sosmed'     => 'https://www.instagram.com/darabiru.coffee',
                 'photo'      => 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAG844kMZ6oPPTQSUYd6XWlCCpfAq9s67SIGYRxRlBds8fmMgEmsBDTyD0d7wLDOJ0WFu77FbJnrhHGTLc0nICIVI8Od9kTExNR8GphsdaqbXjnWUh_h3JQ7GMErso0b5GV7SAU7w6eE0gGu=w408-h544-k-no',
                 'category'   => 'Cafe Nongkrong',
+                'deskripsi_singkat' => 'Cafe cozy dengan nuansa biru khas dan menu kopi serta non-kopi yang variatif.',
             ],
         ];
 
         foreach ($cafes as $data) {
             $category = Category::firstOrCreate(['name' => $data['category']]);
             $cafe = Cafe::create([
-                'name'        => $data['name'],
-                'address'     => $data['address'],
-                'phone'       => $data['phone'],
-                'price_range' => $data['price_range'],
-                'open_hours'  => $data['open_hours'],
-                'sosmed'      => $data['sosmed'],
-                'photo'       => $data['photo'],
+                'name'              => $data['name'],
+                'address'           => $data['address'],
+                'phone'             => $data['phone'],
+                'price_range'       => $data['price_range'],
+                'open_hours'        => $data['open_hours'],
+                'sosmed'            => $data['sosmed'],
+                'photo'             => $data['photo'],
+                'deskripsi_singkat' => $data['deskripsi_singkat'],
             ]);
             $cafe->categories()->attach($category->id);
         }

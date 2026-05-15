@@ -10,17 +10,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            'WiFi Kencang',
-            'Harga Terjangkau',
-            'Instagrammable',
-            'Rasa Terbaik',
-            'Quiet & Cozy',
-            'Nature Vibes',
-            'WFC Friendly',
+            'Cafe WFC',
+            'Cafe Nongkrong',
+            'Cafe Kue',
         ];
 
         foreach ($categories as $category) {
-            Category::create(['name' => $category]);
+            Category::firstOrCreate(['name' => $category]);
         }
     }
 }

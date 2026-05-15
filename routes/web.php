@@ -4,15 +4,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CafeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\CafeController as AdminCafeController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
-use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+
+// Route login & register (hanya untuk yang belum login)
+Route::middleware('guest')->group(function () {
+    Route::get('login', [AuthController::class, 'showUserLogin'])->name('login');
+    Route::post('login', [AuthController::class, 'userLogin']);
+    Route::get('register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register');
+    Route::post('register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store']);
+});
 
 // Route login admin
-Route::get('admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
-Route::post('admin/login', [AdminAuthController::class, 'login'])->name('admin.login.post');
-Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+Route::get('admin/login', [AuthController::class, 'showAdminLogin'])->name('admin.login');
+Route::post('admin/login', [AuthController::class, 'adminLogin'])->name('admin.login.post');
+Route::post('admin/logout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 
 // Route publik (tidak perlu login)
 Route::get('/', [CafeController::class, 'index'])->name('home');
@@ -30,12 +38,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('logout', [AuthController::class, 'userLogout'])->name('logout')->middleware('auth');
+
 // Route admin (perlu login admin guard)
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('cafes', AdminCafeController::class);
     Route::resource('categories', AdminCategoryController::class);
     Route::get('reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
     Route::delete('reviews/{id}', [AdminReviewController::class, 'destroy'])->name('reviews.destroy');
 });
-
-require __DIR__.'/auth.php';

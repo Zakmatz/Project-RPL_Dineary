@@ -11,16 +11,19 @@ export default {
     theme: {
         extend: {
             colors: {
-                'dineary-olive': '#7E8363',
-                'dineary-brown': '#8B3B08',
-                'dineary-cream-light': '#FDF7E9',
+                'dineary-cream': '#F8F4EB',
+                'dineary-yellow': '#EFC878',
+                'dineary-green': '#7D8866',
+                'dineary-orange': '#DF9622',
+                'dineary-brown': '#8B3E0B',
             },
             fontFamily: {
-                // Panggilan Font Baru
-                bagh: ['"UT Bagh"', 'serif'],
-                stack: ['"Stack Sans"', 'sans-serif'],
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                heading: ['Georgia', 'Times New Roman', 'serif'],
+                body: ['ui-sans-serif', 'system-ui', 'sans-serif'],
             },
         },
     },
+
     plugins: [forms],
 };

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CafeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BookmarkController;
@@ -22,17 +23,36 @@ Route::get('admin/login', [AuthController::class, 'showAdminLogin'])->name('admi
 Route::post('admin/login', [AuthController::class, 'adminLogin'])->name('admin.login.post');
 Route::post('admin/logout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 
-// Route publik (tidak perlu login)
-Route::get('/', [CafeController::class, 'index'])->name('home');
+// Route publik utama (Home)
+// Jika user sudah login, arahkan paksa ke user.dashboard. Jika belum, tampilkan beranda guest.
+Route::get('/', function () {
+    if (Auth::guard('web')->check()) {
+        return redirect()->route('user.dashboard');
+    }
+    return app(CafeController::class)->index(request());
+})->name('home');
+
 Route::get('/cafes', [CafeController::class, 'index'])->name('cafes.index');
 Route::get('/cafes/{id}', [CafeController::class, 'show'])->name('cafes.show');
 Route::get('/search', [CafeController::class, 'search'])->name('cafes.search');
 
 // Route user (perlu login)
 Route::middleware('auth')->group(function () {
+    // Dashboard User
+    Route::get('/dashboard', [CafeController::class, 'userDashboard'])->name('user.dashboard');
+
+    // Halaman Dashboard Profil User (Menampilkan profil & riwayat ulasan)
+    Route::get('/profile/dashboard', function () {
+        $user = auth()->user()->load('reviews.cafe');
+        return view('profile.dashboardprofile', compact('user'));
+    })->name('profile.dashboard');
+
+    // Review & Bookmark
     Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::delete('/reviews/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
     Route::post('/bookmarks/{cafe_id}', [BookmarkController::class, 'toggle'])->name('bookmarks.toggle');
+
+    // Pengaturan Profil
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');

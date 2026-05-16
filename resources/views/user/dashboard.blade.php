@@ -4,66 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dineary - Beranda</title>
+    <title>Dineary - Dashboard User</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-dineary-cream antialiased overflow-x-hidden">
 
-    <header class="w-full flex flex-col">
+    <header class="w-full flex flex-col relative">
 
-        <div class="w-full bg-dineary-cream relative z-20 pb-28">
-
-            <nav class="w-full flex justify-between items-center px-10 py-6">
-                <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/Logo D Coklat.png') }}" alt="Logo" class="w-[55px] h-[52px] object-contain">
+        <nav class="w-full bg-dineary-cream relative z-50 shadow-sm">
+            <div class="flex justify-between items-center px-10 py-4 max-w-[1440px] mx-auto w-full">
+                <a href="{{ route('user.dashboard') }}">
+                    <img src="{{ asset('images/Logo D Coklat.png') }}" alt="Logo" class="w-[50px] h-[48px] object-contain">
                 </a>
 
                 <div class="flex items-center gap-4">
-                    @auth
-                    <span class="font-sans font-bold text-dineary-brown hidden md:block">Halo, {{ auth()->user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}" class="m-0">
                         @csrf
-                        <button type="submit" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white border border-red-500 font-sans text-sm font-bold px-6 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
+                        <button type="submit" class="text-red-500 font-sans font-bold text-sm hover:underline mr-2 cursor-pointer">
                             Keluar
                         </button>
                     </form>
-                    @else
-                    <a href="{{ route('login') }}" class="bg-dineary-brown text-white font-sans text-lg font-bold px-8 py-2.5 rounded-xl shadow-md hover:scale-105 transition-transform inline-block">
-                        Masuk
+                    <a href="{{ route('profile.dashboard') }}" class="w-12 h-12 bg-dineary-brown rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                        <svg class="w-7 h-7 text-white mt-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
                     </a>
-                    @endauth
                 </div>
-            </nav>
-
-            <div class="w-full max-w-[1440px] mx-auto flex justify-center items-center gap-32 px-4 -mt-10 -mb-24">
-                <img src="{{ asset('images/Croissant.png') }}" class="w-full max-w-[350px] object-contain hover:-translate-y-2 transition-transform duration-300" alt="Croissant">
-                <img src="{{ asset('images/Biskuit.png') }}" class="w-full max-w-[350px] object-contain hover:-translate-y-2 transition-transform duration-300" alt="Pretzel">
-                <img src="{{ asset('images/Sourdough.png') }}" class="w-full max-w-[350px] object-contain hover:-translate-y-2 transition-transform duration-300" alt="Sourdough">
             </div>
+        </nav>
 
+        <div class="absolute top-[80px] left-0 w-full h-[300px] z-0">
+            <img src="{{ asset('images/Gambar Roti.jpg') }}" class="w-full h-full object-cover opacity-40 mix-blend-multiply" alt="Background Roti">
+            <div class="absolute inset-0 bg-gradient-to-b from-dineary-cream/50 to-transparent"></div>
         </div>
 
-        <div class="relative w-full flex flex-col items-center justify-center py-20">
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-6 pt-[140px] pb-16">
+            <div class="bg-white rounded-[40px] shadow-xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 border border-gray-100">
 
-            <img src="{{ asset('images/Gambar Roti.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply" alt="Background Roti">
-            <div class="absolute inset-0 bg-gradient-to-b from-dineary-cream to-transparent opacity-80"></div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="w-40 h-40 bg-dineary-brown rounded-full flex items-center justify-center border-[6px] border-white shadow-md -mt-24">
+                        <svg class="w-24 h-24 text-gray-200 mt-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                    </div>
+                    <a href="{{ route('profile.dashboard') }}" class="border-2 border-dineary-brown text-dineary-brown font-sans font-bold text-sm px-8 py-2 rounded-full hover:bg-dineary-brown hover:text-white transition-colors">
+                        Lihat Profile
+                    </a>
+                </div>
 
-            <div class="relative z-10 flex flex-col items-center text-center px-4">
+                <div class="flex-1 text-center md:text-left mt-4 md:mt-0">
+                    <h1 class="font-heading font-black text-[50px] md:text-[60px] text-dineary-green leading-none mb-2">Selamat Datang!</h1>
+                    <p class="font-sans font-black text-dineary-brown text-xl">{{ '@' . strtolower(explode(' ', auth()->user()->name)[0]) }}</p>
+                </div>
 
-                <h1 class="font-heading font-bold text-transparent bg-clip-text bg-gradient-to-b from-dineary-green to-gray-700 text-6xl md:text-[85px] leading-[0.85] uppercase max-w-[818px] drop-shadow-sm mb-6">
-                    TEMUKAN CAFE<br>FAVORITMU
-                </h1>
-
-                <p class="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-dineary-brown to-black text-[15px] max-w-[645px] leading-tight mb-8">
-                    Jelajahi berbagai pilihan cafe dan toko roti terbaik di sekitarmu.<br>Temukan suasana nyaman untuk bekerja atau sekadar bersantai bersama teman.
-                </p>
-
-                @guest
-                <a href="{{ route('register') }}" class="bg-gradient-to-b from-dineary-brown to-orange-950 text-white font-sans font-bold text-[22px] w-[251px] h-[69px] rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
-                    Daftar
-                </a>
-                @endguest
+                <div class="border-2 border-dineary-green rounded-3xl p-6 flex flex-col items-center justify-center min-w-[180px] shadow-sm">
+                    <span class="font-sans font-bold text-dineary-green text-[15px] mb-1">Total review</span>
+                    <span class="font-heading font-black text-[65px] text-dineary-brown leading-none">
+                        {{ auth()->user()->reviews ? auth()->user()->reviews->count() : 0 }}
+                    </span>
+                </div>
 
             </div>
         </div>
@@ -79,7 +79,7 @@
             Cari cafe pilihan mu!
         </p>
 
-        <form method="GET" action="{{ route('cafes.index') }}" class="w-full px-6 md:px-12 flex flex-col items-center max-w-[1200px]">
+        <form method="GET" action="{{ route('user.dashboard') }}" class="w-full px-6 md:px-12 flex flex-col items-center max-w-[1200px]">
 
             <div class="relative w-full mb-8">
                 <button type="submit" class="absolute left-6 top-1/2 -translate-y-1/2 cursor-pointer hover:scale-110 transition-transform">
@@ -93,12 +93,12 @@
 
             <div class="flex flex-wrap items-center justify-center w-full gap-4 md:gap-6">
 
-                <a href="{{ route('cafes.index') }}" class="px-10 py-3 rounded-full font-sans font-bold text-[15px] transition-all cursor-pointer shadow-sm {{ !request('category') ? 'bg-dineary-yellow text-dineary-brown shadow-[0_4px_8px_rgba(0,0,0,0.2)]' : 'border border-dineary-cream text-dineary-cream hover:bg-dineary-cream hover:text-dineary-green' }}">
+                <a href="{{ route('user.dashboard') }}" class="px-10 py-3 rounded-full font-sans font-bold text-[15px] transition-all cursor-pointer shadow-sm {{ !request('category') ? 'bg-dineary-yellow text-dineary-brown shadow-[0_4px_8px_rgba(0,0,0,0.2)]' : 'border border-dineary-cream text-dineary-cream hover:bg-dineary-cream hover:text-dineary-green' }}">
                     Semua
                 </a>
 
                 @foreach($categories->take(3) as $category)
-                <a href="{{ route('cafes.index', ['category' => $category->name]) }}" class="px-10 py-3 rounded-full font-sans font-bold text-[15px] transition-all cursor-pointer shadow-sm {{ request('category') == $category->name ? 'bg-dineary-yellow text-dineary-brown shadow-[0_4px_8px_rgba(0,0,0,0.2)]' : 'border border-dineary-cream text-dineary-cream hover:bg-dineary-cream hover:text-dineary-green' }}">
+                <a href="{{ route('user.dashboard', ['category' => $category->name]) }}" class="px-10 py-3 rounded-full font-sans font-bold text-[15px] transition-all cursor-pointer shadow-sm {{ request('category') == $category->name ? 'bg-dineary-yellow text-dineary-brown shadow-[0_4px_8px_rgba(0,0,0,0.2)]' : 'border border-dineary-cream text-dineary-cream hover:bg-dineary-cream hover:text-dineary-green' }}">
                     {{ $category->name }}
                 </a>
                 @endforeach

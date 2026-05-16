@@ -32,7 +32,9 @@ class AuthController extends Controller
         if (Auth::guard('web')->attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             $request->session()->regenerate();
             $request->session()->put('role', 'user');
-            return redirect()->intended(route('home'));
+
+            // --- UBAHAN DISINI: Arahkan ke dashboard user, BUKAN home ---
+            return redirect()->intended(route('user.dashboard'));
         }
 
         return back()->withErrors([
@@ -75,6 +77,6 @@ class AuthController extends Controller
     public function adminLogout()
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('login');
+        return redirect('/');
     }
 }

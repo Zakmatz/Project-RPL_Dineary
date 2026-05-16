@@ -30,18 +30,38 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // 1. Proses Validasi Input dari Form HTML
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:'.User::class],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        // 2. Menggabungkan First Name & Last Name menjadi Full Name
+        $fullName = $request->first_name . ' ' . $request->last_name;
 
+        // 3. Blok Try-Catch untuk Mendeteksi Error Database
+        try {
+            
+            $user = User::create([
+                'name' => $fullName, 
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+        } catch (\Exception $e) {
+            // JIKA DATABASE ERROR, KODE DI BAWAH INI AKAN MENAMPILKAN PESAN ERRORNYA SECARA DETAIL
+            dd([
+                'Pesan Error' => $e->getMessage(),
+                'File Tempat Error' => $e->getFile(),
+                'Baris Error' => $e->getLine()
+            ]);
+        }
+
+        // 4. Jika proses insert database sukses, lanjutkan alur login otomatis
         event(new Registered($user));
 
         Auth::login($user);

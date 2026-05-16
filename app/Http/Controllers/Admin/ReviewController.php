@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Review;
-use App\Models\ReviewLog;
 
 class ReviewController extends Controller
 {
@@ -16,16 +15,13 @@ class ReviewController extends Controller
 
     public function destroy($id)
     {
+        // 1. Cari data review berdasarkan ID
         $review = Review::findOrFail($id);
 
-        // Catat log penghapusan
-        ReviewLog::create([
-            'admin_id'  => auth()->id(),
-            'review_id' => $review->id,
-            'action'    => 'deleted',
-        ]);
-
+        // 2. Langsung hapus review dari database
         $review->delete();
+
+        // 3. Kembali ke halaman sebelumnya dengan pesan sukses
         return back()->with('success', 'Review berhasil dihapus.');
     }
 }

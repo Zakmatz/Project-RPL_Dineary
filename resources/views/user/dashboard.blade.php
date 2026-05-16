@@ -114,7 +114,7 @@
 
                     <div class="relative w-full h-[210px] shrink-0 mb-4">
                         @if($cafe->photo)
-                        <img src="{{ asset('storage/' . $cafe->photo) }}" alt="{{ $cafe->name }}" class="w-full h-full object-cover rounded-[24px]">
+                       <img src="{{ $cafe->photo }}" alt="{{ $cafe->name }}" class="w-full h-full object-cover rounded-[24px]">
                         @else
                         <img src="{{ asset('images/Contoh Cafe.png') }}" alt="{{ $cafe->name }}" class="w-full h-full object-cover rounded-[24px]">
                         @endif

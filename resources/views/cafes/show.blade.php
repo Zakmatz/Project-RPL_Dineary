@@ -40,7 +40,7 @@
     <div class="absolute top-0 left-0 w-full h-[45vh] z-0">
         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-[#F3D58D]/40 to-[#F3D58D] z-10"></div>
         @if($cafe->photo)
-        <img src="{{ asset('storage/' . $cafe->photo) }}" class="w-full h-full object-cover z-0" alt="{{ $cafe->name }}">
+        <img src="{{$cafe->photo }}" class="w-full h-full object-cover z-0" alt="{{ $cafe->name }}">
         @else
         <img src="{{ asset('images/Contoh Cafe.png') }}" class="w-full h-full object-cover z-0" alt="Placeholder">
         @endif
